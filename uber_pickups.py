@@ -14,7 +14,9 @@ st.write('Hello world!')
 import streamlit as st
 
 n1= st.number_input("Insert a number")
-n2= st.number_input("Insert a number")
+
+n2 = st.number_input(
+    "Insert a number", value=None, placeholder="Type a number..."
 
 if st.button('minus'):
     st.write(n1-n2)
