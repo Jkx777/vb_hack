@@ -16,9 +16,12 @@ import streamlit as st
 n1, n2 = st.number_input("Insert a number"), st.number_input("Insert a number")
 if st.button('minus'):
     st.write(n1-n2)
-else if st.button('plus'):
+
+if st.button('plus'):
     st.write(n1 + n2)
-else if st.button('multiply'):
+
+if st.button('multiply'):
     st.write(n1*n2)
-else if st.button('divie'):
+    
+if st.button('divie'):
     st.write(n1/n2)
