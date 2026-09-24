@@ -1,17 +1,20 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import streamlit as st
+#====================================================================
 
 st.title('Uber pickups in NYC')
 st.write('Hello world!')
 
-# if st.button('Say hello'):
-#      st.write('Why hello there')
-# else:
-#      st.write('Goodbye')
+#====================================================================
+option = st.selectbox(
+    "How would you like to be contacted?",
+    ("Email", "Home phone", "Mobile phone"),
+)
 
-
-import streamlit as st
+st.write("You selected:", option)
+#====================================================================
 
 n1= st.number_input("Insert a number")
 
@@ -28,5 +31,5 @@ if st.button('plus'):
 if st.button('multiply'):
     st.write(n1*n2)
 
-if st.button('divie'):
+if st.button('divied'):
     st.write(n1/n2)
