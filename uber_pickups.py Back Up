@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import streamlit as st
 #====================================================================
 
 st.title('Uber pickups in NYC')
@@ -13,9 +12,9 @@ n1= st.number_input("Insert a number")
 
 n2 = st.number_input(
     "Insert a number", value=None, placeholder="Type a number..."
+)
 
 #selectionbox-----------------------------------
-)
 option = st.selectbox(
     "How would you like to be contacted?",
     ("Addition", "Subtraction", "Division", "Multiplication"),
