@@ -16,6 +16,6 @@ pokemon = st.text_input("Enter pokemon name/id")
 res = fetch_pokemon(pokemon)
 
 if st.button("Search"):
-    st.write(res["id"])
-    st.write(res["name"])
-    st.write(res["weight"])
+    st.write("id: ", res["id"])
+    st.write("name: ", res["name"])
+    st.write("wieght:", res["weight"])
