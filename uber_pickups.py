@@ -20,8 +20,14 @@ option = st.selectbox(
     "How would you like to be contacted?",
     ("Addition", "Subtraction", "Division", "Multiplication"),
 )
-
-st.write("You selected:", option)
+if option == "Addition":
+    st.write("You selected:", n1 + n2)
+if option == "Subtraction":
+    st.write("You selected:", n1 - n2)
+if option == "Division":
+    st.write("You selected:", n1 / n2)
+if option == "Multiplication":
+    st.write("You selected:", n1 * n2)
 
 #Buttons------------------------------------------
 # if st.button('minus'):
