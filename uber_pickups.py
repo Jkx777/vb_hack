@@ -1,43 +1,10 @@
-import streamlit as st
-import pandas as pd
-import numpy as np
-import streamlit as st
-#====================================================================
+import requests
 
-st.title('Uber pickups in NYC')
-st.write('Hello world!')
+BASE_URL = "https://pokeapi.co/api/v2/pokemon"
 
-#====================================================================
 
-n1= st.number_input("Insert a number")
-
-n2 = st.number_input(
-    "Insert a number", value=None, placeholder="Type a number..."
-
-#selectionbox-----------------------------------
-)
-option = st.selectbox(
-    "How would you like to be contacted?",
-    ("Addition", "Subtraction", "Division", "Multiplication"),
-)
-if option == "Addition":
-    st.write("You selected:", n1 + n2)
-if option == "Subtraction":
-    st.write("You selected:", n1 - n2)
-if option == "Division":
-    st.write("You selected:", n1 / n2)
-if option == "Multiplication":
-    st.write("You selected:", n1 * n2)
-
-#Buttons------------------------------------------
-# if st.button('minus'):
-#     st.write(n1-n2)
-
-# if st.button('plus'):
-#     st.write(n1 + n2)
-
-# if st.button('multiply'):
-#     st.write(n1*n2)
-
-# if st.button('divied'):
-#     st.write(n1/n2)
+def fetch_pokemon(name_or_id: str, timeout: float = 6) -> dict:
+    """Raise requests.HTTPError if the name/id doesn't exist (404) or on network errors."""
+    r = requests.get(f"{BASE_URL}/{str(name_or_id).strip().lower()}", timeout=timeout)
+    r.raise_for_status()
+    return r.json()
