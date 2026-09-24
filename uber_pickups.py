@@ -12,7 +12,7 @@ def fetch_pokemon(name_or_id: str, timeout: float = 6) -> dict:
     return r.json()
 #===============================================================
 
-pokemon = st.text_input()
+pokemon = st.text_input("Enter pokemon name/id")
 res = fetch_pokemon(pokemon)
 
 if st.button("Search"):
