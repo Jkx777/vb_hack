@@ -16,16 +16,21 @@ pokemon = st.text_input("Enter pokemon name/id")
 res = fetch_pokemon(pokemon)
 
 if st.button("Search"):
-    st.write("Id: ", res["id"])
-    st.write("Name: ", res["name"])
-    st.write("Wieght: ", res["weight"])
-    st.write("Height: ", res["height"])
-    st.write("Ability: ", res["abilities"][0]["ability"]["name"])
 
-    if len(res["types"]) == 1:
-        st.write("Types: ", res["types"][0]["type"]["name"])
-    else:
-        st.write("Types: ", res["types"][0]["type"]["name"], " & ", res["types"][1]["type"]["name"])
+    img, description = st.columns(2)
+
+    with img:
+        st.image("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1.png")
+
+    with description:
+        st.write("Id: ", res["id"], res["name"])
+
+        if len(res["types"]) == 1:
+            st.write("Type: ", res["types"][0]["type"]["name"])
+        else:
+            st.write("Types: ", res["types"][0]["type"]["name"], " & ", res["types"][1]["type"]["name"])
+
+        st.write("Height: ", res["height"], "---", "Wieght: ", res["weight"])
 
     #Base stats=========================================================================
     st.header("Base Stats")
