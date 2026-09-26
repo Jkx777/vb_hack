@@ -27,29 +27,29 @@ if st.button("Search"):
     else:
         st.write("Types: ", res["types"][0]["type"]["name"], " & ", res["types"][1]["type"]["name"])
 
-    #Base states
+    #Base stats
     hp, atk, defe, Satk, Sdefe, sp = st.columns(6)
 
     with hp:
         st.write("Hp")
-        st.write(res["states"][0]["base_stat"])
+        st.write(res["stats"][0]["base_stat"])
 
     with atk:
         st.write("Attack")
-        st.write(res["states"][1]["base_stat"])
+        st.write(res["stats"][1]["base_stat"])
 
     with defe:
         st.write("Defense")
-        st.write(res["states"][2]["base_stat"])
+        st.write(res["stats"][2]["base_stat"])
 
     with Satk:
         st.write("Special attack")
-        st.write(res["states"][3]["base_stat"])
+        st.write(res["stats"][3]["base_stat"])
 
     with Sdefe:
         st.write("Special defense")
-        st.write(res["states"][4]["base_stat"])
+        st.write(res["stats"][4]["base_stat"])
 
     with sp:
         st.write("Speed")
-        st.write(res["states"][5]["base_stat"])
+        st.write(res["stats"][5]["base_stat"])
