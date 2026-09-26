@@ -27,7 +27,8 @@ if st.button("Search"):
     else:
         st.write("Types: ", res["types"][0]["type"]["name"], " & ", res["types"][1]["type"]["name"])
 
-    #Base stats
+    #Base stats=========================================================================
+    st.header("Base Stats")
     hp, atk, defe, Satk, Sdefe, sp = st.columns(6)
 
     with hp:
