@@ -18,5 +18,10 @@ res = fetch_pokemon(pokemon)
 if st.button("Search"):
     st.write("Id: ", res["id"])
     st.write("Name: ", res["name"])
-    st.write("Wieght:", res["weight"])
+    st.write("Wieght: ", res["weight"])
+    st.write("Height: ", res["height"])
     st.write("Ability: ", res["abilities"][0]["ability"]["name"])
+    if len(res["types"]) == 1:
+        st.write("Types: ", res["types"][0]["type"]["name"])
+    else:
+        st.write("Types: ", res["types"][0]["type"]["name"], " & ", res["types"][1]["type"]["name"])
